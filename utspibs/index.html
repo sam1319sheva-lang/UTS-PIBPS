@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profil Mahasiswa</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrapper">
+
+    <header>
+      <div class="logo" aria-hidden="true"></div>
+      <h1>Profil Mahasiswa</h1>
+    </header>
+
+    <nav>
+      <ul>
+        <li><a href="#biodata" class="aktif" data-target="biodata">Biodata</a></li>
+        <li><a href="#pendidikan" data-target="pendidikan">Pendidikan</a></li>
+        <li><a href="#pengalaman" data-target="pengalaman">Pengalaman</a></li>
+        <li><a href="#keahlian" data-target="keahlian">Keahlian</a></li>
+        <li><a href="#publikasi" data-target="publikasi">Publikasi</a></li>
+      </ul>
+    </nav>
+
+    <section id="konten">
+
+      <article id="biodata" class="panel tampil">
+        <h2>Biodata</h2>
+        <table>
+          <tr><th>NIM</th><td>: 0423087102</td></tr>
+          <tr><th>Nama</th><td>: Raven</td></tr>
+          <tr><th>Agama</th><td>: Islam</td></tr>
+          <tr><th>Tanggal Lahir</th><td>: 23 Agustus 1971</td></tr>
+          <tr><th>Tempat Lahir</th><td>: Jakarta</td></tr>
+        </table>
+      </article>
+
+      <article id="pendidikan" class="panel">
+        <h2>Pendidikan</h2>
+        <ul>
+          <li>SD Negeri 01 Jakarta (1978 - 1984)</li>
+          <li>SMP Negeri 05 Jakarta (1984 - 1987)</li>
+          <li>SMA Negeri 70 Jakarta (1987 - 1990)</li>
+          <li>S1 Teknik Informatika (1990 - 1995)</li>
+          <li>S2 Magister Sistem Informasi (2005 - 2007)</li>
+        </ul>
+      </article>
+
+      <article id="pengalaman" class="panel">
+        <h2>Pengalaman</h2>
+        <ul>
+          <li>Programmer, PT Teknologi Maju (1996 - 2000)</li>
+          <li>System Analyst, PT Solusi Digital (2000 - 2006)</li>
+          <li>Dosen Teknik Informatika (2007 - sekarang)</li>
+        </ul>
+      </article>
+
+      <article id="keahlian" class="panel">
+        <h2>Keahlian</h2>
+        <ul>
+          <li>Pemrograman Web (HTML, CSS, PHP, JavaScript)</li>
+          <li>Basis Data (MySQL)</li>
+          <li>Analisis dan Perancangan Sistem</li>
+          <li>Pengembangan Aplikasi VR/XR (Unity)</li>
+        </ul>
+      </article>
+
+      <article id="publikasi" class="panel">
+        <h2>Publikasi</h2>
+        <ul>
+          <li>Rancang Bangun Sistem Informasi Akademik Berbasis Web (2012)</li>
+          <li>Penerapan Responsive Web Design pada Portal Kampus (2016)</li>
+          <li>Implementasi Virtual Reality untuk Media Pembelajaran (2020)</li>
+        </ul>
+      </article>
+
+    </section>
+
+    <aside>
+      <h3>Hobi:</h3>
+      <ul>
+        <li>Bulutangkis</li>
+        <li>Bola</li>
+        <li>Pemrograman</li>
+        <li>Membaca</li>
+      </ul>
+    </aside>
+
+    <footer>
+      <div class="sosmed">
+        <p>Twitter: @akun</p>
+        <p>FB: @akun</p>
+        <p>Instagram: @akun</p>
+      </div>
+      <p class="copy">&copy; Copyright 2020. All Rights Reserved</p>
+      <div class="info">
+        <strong>NAMA WEB</strong>
+        <p>Slogan/Keterangan/Informasi Web</p>
+      </div>
+    </footer>
+
+  </div>
+
+  <script>
+    // Klik menu nav -> tampilkan konten yang sesuai di area section
+    var links  = document.querySelectorAll("nav a");
+    var panels = document.querySelectorAll("#konten .panel");
+
+    links.forEach(function (link) {
+      link.addEventListener("click", function (e) {
+        e.preventDefault();
+        var id = this.getAttribute("data-target");
+
+        panels.forEach(function (p) { p.classList.remove("tampil"); });
+        links.forEach(function (l) { l.classList.remove("aktif"); });
+
+        document.getElementById(id).classList.add("tampil");
+        this.classList.add("aktif");
+      });
+    });
+  </script>
+</body>
+</html>
