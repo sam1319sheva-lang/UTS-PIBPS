@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profil Mahasiswa</title>
+  <link rel="stylesheet" href="sam.css">
+</head>
+<body>
+  <div class="wrapper">
+
+    
+<header>
+    <img src="IMAGE/foto-profil.png"
+         alt="Foto profil Samuel"
+         class="foto-profil">
+
+    <div>
+        <h1>Profil Mahasiswa</h1>
+        <p>Nama: Samuel Sheva Sabbathino Liklikwatil</p>
+    </div>
+</header>
+
+
+    <nav>
+      <ul>
+        <li><a href="#biodata" class="aktif" data-target="biodata">Biodata</a></li>
+        <li><a href="#pendidikan" data-target="pendidikan">Pendidikan</a></li>
+        <li><a href="#pengalaman" data-target="pengalaman">Pengalaman</a></li>
+        <li><a href="#keahlian" data-target="keahlian">Keahlian</a></li>
+      </ul>
+    </nav>
+
+    <section id="konten">
+
+      <article id="biodata" class="panel tampil">
+        <h2>Biodata</h2>
+        <table>
+          <tr><th>NIM</th><td>: 2025081037</td></tr>
+          <tr><th>Nama</th><td>: Samuel Sheva Sabbathino Liklikwatil</td></tr>
+          <tr><th>Agama</th><td>: Kristen</td></tr>
+          <tr><th>Tanggal Lahir</th><td>: 26 Januari 2007</td></tr>
+          <tr><th>Tempat Lahir</th><td>: Jakarta</td></tr>
+        </table>
+      </article>
+
+      <article id="pendidikan" class="panel">
+        <h2>Pendidikan</h2>
+        <ul>
+          <li>SD Taruna Bangsa</li>
+          <li>SMP Nusa Indah</li>
+          <li>SMA Erenos</li>
+          <li>Universitas Pembangunan Jaya</li>
+        </ul>
+      </article>
+
+      <article id="pengalaman" class="panel">
+        <h2>Pengalaman</h2>
+        <ul>
+          <li>Pengalaman Organisasi & kepanitiaan</li>
+          <li>Ketua Pelaksana Kegiatan Ospek</li>
+        </ul>
+      </article>
+
+      <article id="keahlian" class="panel">
+        <h2>Keahlian</h2>
+        <ul>
+          <li>Keahlian dalam pemrograman web</li>
+          <li>Basis Data (MySQL)</li>
+          <li>Desain Grafis (Photoshop, Illustrator)</li>
+          <li>memimpin tim</li>
+        </ul>
+      </article>
+
+    </section>
+
+    <aside>
+      <h3>Hobi:</h3>
+      <ul>
+        <li>F1</li>
+        <li>Baca Buku</li>
+        <li>Nonton Film</li>
+        <li>Fotografi</li>
+      </ul>
+    </aside>
+
+    <footer>
+      <div class="sosmed">
+        <p>Twitter: @stvn</p>
+        <p>FB: @stvn</p>
+        <p>Instagram: @callme.shv</p>
+      </div>
+      <p class="copy">&copy; Copyright 2026 - Profil Mahasiswa</p>
+      <div class="info">
+        <strong> Omnique | save ur time |</strong>
+        <p>UNIVERSITAS PEMBANGUNAN JAYA</p>
+      </div>
+    </footer>
+
+  </div>
+
+  <script>
+    // Klik menu nav -> tampilkan konten yang sesuai di area section
+    var links  = document.querySelectorAll("nav a");
+    var panels = document.querySelectorAll("#konten .panel");
+
+    links.forEach(function (link) {
+      link.addEventListener("click", function (e) {
+        e.preventDefault();
+        var id = this.getAttribute("data-target");
+
+        panels.forEach(function (p) { p.classList.remove("tampil"); });
+        links.forEach(function (l) { l.classList.remove("aktif"); });
+
+        document.getElementById(id).classList.add("tampil");
+        this.classList.add("aktif");
+      });
+    });
+  </script>
+</body>
+</html>
